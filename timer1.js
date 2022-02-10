@@ -7,6 +7,9 @@ const timer1 = function() {
   const sortedTimer = xtimer.sort()  
   
   sortedTimer.forEach(time => {
+    if (time < 0 || isNaN(time)) {
+      return
+    }
     setTimeout(() => { 
       console.log('timer', time)
       process.stdout.write('\x07');
